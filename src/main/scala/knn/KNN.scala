@@ -1,8 +1,8 @@
 package knn
 
+import smile.classification.{KNN, knn}
 import smile.data.{Attribute, AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.read
-import smile.classification.{KNN, knn}
 import smile.validation.accuracy
 
 object KNN extends App {
