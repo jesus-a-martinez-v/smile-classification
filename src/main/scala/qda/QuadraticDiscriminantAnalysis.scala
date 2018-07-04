@@ -1,11 +1,11 @@
-package fisher
+package qda
 
-import smile.classification.fisher
+import smile.classification.qda
 import smile.data.{Attribute, AttributeDataset, NominalAttribute}
 import smile.read
 import smile.validation.accuracy
 
-object FisherLinearDiscriminant extends App {
+object QuadraticDiscriminantAnalysis extends App {
   val attributes = new Array[Attribute](4)
 
   attributes(0) = new NominalAttribute("Left-Weight")
@@ -15,14 +15,15 @@ object FisherLinearDiscriminant extends App {
 
   val label = new NominalAttribute("Class Name")
 
-  val dataFileUri = this.getClass.getClassLoader.getResource("fisher/balance-scale.data").toURI.getPath
+  val dataFileUri = this.getClass.getClassLoader.getResource("qda/balance-scale.data").toURI.getPath
   val data: AttributeDataset = read.csv(dataFileUri, attributes = attributes, response = Some((label, 0)))
 
   println("Sneak peek of the data:")
   println(data)
 
-  val model = fisher(data.x(), data.labels())
+  val model = qda(data.x(), data.labels())
   val predictions = model.predict(data.x())
 
   println(s"Model's accuracy on the training set: ${accuracy(data.labels(), predictions)}")
+
 }
