@@ -13,7 +13,7 @@ object DecisionTree extends App {
   attributes(2) = new NumericAttribute("petal length in cm")
   attributes(3) = new NumericAttribute("petal width in cm")
 
-  val label = new NominalAttribute("whether he/she donated blood in March 2007")
+  val label = new NominalAttribute("class")
 
   val dataFileUri = this.getClass.getClassLoader.getResource("dt/iris.data").toURI.getPath
   val data: AttributeDataset = read.csv(dataFileUri, attributes = attributes, response = Some((label, 4)), header = true)
