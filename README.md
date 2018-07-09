@@ -2,7 +2,7 @@
 
 A set of simple examples of classification tasks implemented using [Smile](https://haifengl.github.io/smile/).
 
-![Man smiling](https://github.com/jesus-a-martinez-v/smile-classification/blob/master/assets/smile2.jpeg)
+![Woman smiling](https://github.com/jesus-a-martinez-v/smile-classification/blob/master/assets/smile2.jpeg)
 
 Each example is self contained in its own package and object under `src/main/scala/<package name>`. The corresponding data and the description is under `src/main/resources/<package name>` and in this folder you'll find a thorough description of the dataset.
 
